@@ -1,0 +1,26 @@
+{
+	"backend": "VSWITHSILICON",
+	"conditionalize_permissions": false,
+	"includes": [
+		"./",
+		"./verification/dependencies"
+	],
+	"input_files": [
+		"pkg/slayers/extn.go",
+		"pkg/slayers/extn_spec.gobra",
+		"pkg/slayers/l4.go",
+		"pkg/slayers/layertypes_spec.gobra",
+		"pkg/slayers/scion.go",
+		"pkg/slayers/scion_spec.gobra",
+		"pkg/slayers/scmp.go",
+		"pkg/slayers/scmp_msg.go",
+		"pkg/slayers/scmp_msg_spec.gobra",
+		"pkg/slayers/scmp_spec.gobra",
+		"pkg/slayers/scmp_typecode.go",
+		"pkg/slayers/scmp_typecode_spec.gobra"
+	],
+	"mce_mode": "on",
+	"module": "github.com/scionproto/scion",
+	"more_joins": "off",
+	"parallelize_branches": true
+}

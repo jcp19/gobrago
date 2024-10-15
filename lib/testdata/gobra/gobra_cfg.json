@@ -1,0 +1,7 @@
+{
+	"jar_path": "/gobra.jar",
+	"jvm_options": [
+		"-Xss1g",
+		"-Xmx4g"
+	]
+}
