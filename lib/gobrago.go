@@ -51,10 +51,31 @@ type VerificationJobCfg struct {
 	MoreJoins                 MoreJoins    `json:"more_joins"`
 	PackagePath               string       `json:"pkg_path"`
 	ParallelizeBranches       bool         `json:"parallelize_branches"`
+	PrintVpr                  bool         `json:"print_vpr"`
 	ProjectRoot               string       `json:"project_root"`
 	Recursive                 bool         `json:"recursive"`
 	RequireTriggers           bool         `json:"require_triggers"`
 	OtherFlags                []string     `json:"other"`
+}
+
+func DefaultGobraInstallCfg() GobraInstallCfg {
+	return GobraInstallCfg{}
+}
+
+func DefaultVerificationJobCfg() VerificationJobCfg {
+	return VerificationJobCfg{
+		AssumeInjectivityInhale:   true,
+		Backend:                   Silicon,
+		CheckConsistency:          true,
+		CheckOverflow:             false,
+		ConditionalizePermissions: false,
+		HeaderOnly:                true,
+		Mce:                       MceOd,
+		ParallelizeBranches:       false,
+		PrintVpr:                  true,
+		Recursive:                 false,
+		RequireTriggers:           true,
+	}
 }
 
 func (g *GobraInstallCfg) ResolvePaths(basePath string) error {
@@ -142,6 +163,9 @@ func ExpandCfgToCmd(installCfg GobraInstallCfg, jobCfg VerificationJobCfg) (stri
 	if jobCfg.ParallelizeBranches {
 		Append(&components, "--parallelizeBranches")
 	}
+	if jobCfg.PrintVpr {
+		Append(&components, "--printVpr")
+	}
 	if jobCfg.ProjectRoot != "" {
 		Append(&components, "--projectRoot", jobCfg.ProjectRoot)
 	}
@@ -168,19 +192,8 @@ func GenCmd(installCfgPath, jobCfgPath string) (string, error) {
 		return "", err
 	}
 	// set defaults before unmarshalling
-	installCfg := GobraInstallCfg{}
-	jobCfg := VerificationJobCfg{
-		AssumeInjectivityInhale:   true,
-		Backend:                   Silicon,
-		CheckConsistency:          true,
-		CheckOverflow:             false,
-		ConditionalizePermissions: false,
-		HeaderOnly:                true,
-		Mce:                       MceOd,
-		ParallelizeBranches:       false,
-		Recursive:                 false,
-		RequireTriggers:           true,
-	}
+	installCfg := DefaultGobraInstallCfg()
+	jobCfg := DefaultVerificationJobCfg()
 	if err := json.Unmarshal(installCfgRaw, &installCfg); err != nil {
 		return "", err
 	}

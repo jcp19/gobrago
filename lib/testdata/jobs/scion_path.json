@@ -8,5 +8,6 @@
 	"more_joins": "off",
 	"parallelize_branches": true,
 	"pkg_path": "pkg/slayers/path/",
-	"other": ["--printVpr"]
+	"print_vpr": true,
+	"other": ["--disableNL"]
 }

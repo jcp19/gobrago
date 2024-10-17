@@ -46,7 +46,7 @@ var genCmdTests = map[string]struct {
 			"-I testdata/jobs testdata/jobs/verification/dependencies --mceMode=on " +
 			"-m github.com/scionproto/scion --moreJoins off " +
 			"-p testdata/jobs/pkg/slayers/path --parallelizeBranches " +
-			"--requireTriggers --printVpr",
+			"--printVpr --requireTriggers --disableNL",
 	},
 	"scion slayers package": {
 		gobraCfgFile: "testdata/gobra/gobra_cfg.json",
@@ -57,7 +57,7 @@ var genCmdTests = map[string]struct {
 			"testdata/jobs/pkg/slayers/scion.go testdata/jobs/pkg/slayers/scion_spec.gobra testdata/jobs/pkg/slayers/scmp.go " +
 			"testdata/jobs/pkg/slayers/scmp_msg.go testdata/jobs/pkg/slayers/scmp_msg_spec.gobra testdata/jobs/pkg/slayers/scmp_spec.gobra " +
 			"testdata/jobs/pkg/slayers/scmp_typecode.go testdata/jobs/pkg/slayers/scmp_typecode_spec.gobra --mceMode=on -m " +
-			"github.com/scionproto/scion --moreJoins off --parallelizeBranches --requireTriggers",
+			"github.com/scionproto/scion --moreJoins off --parallelizeBranches --printVpr --requireTriggers",
 	},
 }
 
