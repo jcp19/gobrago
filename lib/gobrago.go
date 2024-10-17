@@ -72,7 +72,7 @@ func DefaultVerificationJobCfg() VerificationJobCfg {
 		HeaderOnly:                true,
 		Mce:                       MceOd,
 		ParallelizeBranches:       false,
-		PrintVpr:                  true,
+		PrintVpr:                  false,
 		Recursive:                 false,
 		RequireTriggers:           true,
 	}

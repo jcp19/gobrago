@@ -57,7 +57,7 @@ var genCmdTests = map[string]struct {
 			"testdata/jobs/pkg/slayers/scion.go testdata/jobs/pkg/slayers/scion_spec.gobra testdata/jobs/pkg/slayers/scmp.go " +
 			"testdata/jobs/pkg/slayers/scmp_msg.go testdata/jobs/pkg/slayers/scmp_msg_spec.gobra testdata/jobs/pkg/slayers/scmp_spec.gobra " +
 			"testdata/jobs/pkg/slayers/scmp_typecode.go testdata/jobs/pkg/slayers/scmp_typecode_spec.gobra --mceMode=on -m " +
-			"github.com/scionproto/scion --moreJoins off --parallelizeBranches --printVpr --requireTriggers",
+			"github.com/scionproto/scion --moreJoins off --parallelizeBranches --requireTriggers",
 	},
 }
 
