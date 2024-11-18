@@ -1,11 +1,11 @@
 module gobrago
 
-go 1.23.0
+go 1.21.0
 
-toolchain go1.23.2
+toolchain go1.21.2
 
 require (
-	github.com/jcp19/goprelude v0.0.0-20240905085710-b8a7f4ff0da9
+	github.com/jcp19/goprelude v0.0.0-20241118144533-57ffb48a8728
 	github.com/stretchr/testify v1.9.0
 )
 
